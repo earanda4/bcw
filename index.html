@@ -224,23 +224,32 @@
         }
 
         /* Contact Section */
-        #contact {
-            background-color: var(--chocolate);
-            color: var(--white);
-            padding: 80px 20px;
-            text-align: center;
-        }
+        /* Contact Section - White Theme */
+#contact {
+    background-color: var(--white); /* Now matches the header */
+    color: var(--chocolate);        /* Dark text for readability */
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 4px solid #FFF0F3;  /* A subtle pink line to separate it from the gallery */
+}
 
-        #contact h2 {
-            color: var(--primary-pink);
-        }
+#contact h2 {
+    color: var(--dark-pink);        /* Pink headline to match the rest of the site */
+    margin-bottom: 15px;
+}
 
-        .contact-methods {
-            margin: 30px auto;
-            max-width: 600px;
-            font-size: 1.1rem;
-            line-height: 2;
-        }
+#contact p {
+    max-width: 600px;
+    margin: 0 auto 20px auto;       /* Centers the text nicely */
+    color: #666;                    /* Soft gray for the description */
+}
+
+.contact-methods {
+    margin: 30px auto;
+    font-size: 1.1rem;
+    line-height: 2;
+    color: var(--chocolate);        /* Darker text for the steps so they stand out */
+}
         /* Footer */
         footer {
             background-color: #3E2b24;
