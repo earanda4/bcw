@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Dipped Confections</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS STYLES START HERE --- */
+        
+        /* Variables for easy color changes */
+        :root {
+            --primary-pink: #F8C3CD; /* Soft Pink */
+            --dark-pink: #D8829D;    /* Darker Pink accents */
+            --chocolate: #5D4037;    /* Dark Brown text */
+            --white: #ffffff;
+            --bg-light: #FFFBFB;     /* Very pale pinkish white background */
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--chocolate);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            border-radius: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-pink);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links li a:hover {
+            color: var(--dark-pink);
+        }
+
+        .btn-nav {
+            background-color: var(--dark-pink);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--chocolate);
+            color: var(--white);
+        }
+
+        /* Hero / Header Section */
+        .hero {
+            height: 80vh;
+            /* Using one of your photos as a background with a white overlay so text is readable */
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.6)), url('IMG_4388.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-pink);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .btn-main {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--chocolate);
+            color: var(--white);
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            background-color: var(--dark-pink);
+            transform: translateY(-2px);
+        }
+
+        /* General Section Styling */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-pink);
+        }
+
+        /* Menu Section */
+        .bg-pink {
+            background-color: #FFF0F3;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--chocolate);
+        }
+
+        .details {
+            margin-top: 15px;
+            list-style-position: inside;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--chocolate);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #contact h2 {
+            color: var(--primary-pink);
+        }
+
+        .contact-methods {
+            margin: 30px auto;
+            max-width: 600px;
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3E2b24;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Hidden on mobile for simplicity */
+            .logo { margin: 0 auto; }
+            .hero { height: 60vh; }
+        }
+        /* --- CSS ENDS HERE --- */
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Sweet Dipped Confections</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact" class="btn-nav">Order Now</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Hand-Dipped Happiness</h1>
+            <p>Artisanal Cakesicles, Pretzels, and Treats for every occasion.</p>
+            <a href="#menu" class="btn-main">View the Menu</a>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <h2>Made with Love</h2>
+        <p>Welcome to our boutique bakery. We specialize in turning simple treats into elegant gifts. From our signature fudgy cakesicles to our sweet-and-salty chocolate covered pretzels, every item is hand-dipped, decorated, and packaged to perfection.</p>
+    </section>
+
+    <section id="menu" class="bg-pink">
+        <div class="container">
+            <h2>Our Collections</h2>
+            <div class="menu-grid">
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="IMG_4390.jpg" alt="Small Treat Box">
+                    </div>
+                    <h3>The Sweet Solo</h3>
+                    <p>Perfect for a small "thinking of you" gift.</p>
+                    <ul class="details">
+                        <li>1 Signature Cakesicle</li>
+                        <li>2 Dipped Oreos</li>
+                        <li>Gift Packaging Included</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="IMG_4397.jpg" alt="Medium Treat Box">
+                    </div>
+                    <h3>The Berry & Bright</h3>
+                    <p>A mix of crunch and cake.</p>
+                    <ul class="details">
+                        <li>2 Cakesicles</li>
+                        <li>2 Dipped Pretzels</li>
+                        <li>Assorted Chocolates</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="IMG_4388.jpg" alt="Large Party Box">
+                    </div>
+                    <h3>The Grand Sampler</h3>
+                    <p>The ultimate dessert experience for parties.</p>
+                    <ul class="details">
+                        <li>Assorted Cakesicles</li>
+                        <li>Full Pretzel & Oreo Spread</li>
+                        <li>Custom Color Themes</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="container">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <img src="IMG_4391.jpg" alt="Treats detail">
+            <img src="IMG_4403.jpg" alt="Pink box">
+            <img src="IMG_4398.jpg" alt="Pink pretzels">
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-box">
+            <h2>Ready to Order?</h2>
+            <p>Since we bake everything fresh to order, please contact us directly to check availability for your date.</p>
+            
+            <div class="contact-methods">
+                <p><strong>Step 1:</strong> Choose your box size.</p>
+                <p><strong>Step 2:</strong> Pick your color theme.</p>
+                <p><strong>Step 3:</strong> Click below to email us!</p>
+            </div>
+
+            <a href="mailto:email@example.com" class="btn-main">Email Us for Orders</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sweet Dipped Confections. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
