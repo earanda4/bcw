@@ -116,19 +116,24 @@
             font-weight: 500;
         }
 
+        /* Main Button Styling */
         .btn-main {
             display: inline-block;
             padding: 12px 30px;
-            background-color: var(--chocolate);
+            /* Changed start color to pink */
+            background-color: var(--dark-pink); 
             color: var(--white);
             border-radius: 30px;
             font-weight: 600;
-            transition: 0.3s;
+            transition: 0.3s ease-in-out; /* Smoother transition */
+            box-shadow: 0 4px 6px rgba(216, 130, 157, 0.3); /* Subtle pink shadow */
         }
 
         .btn-main:hover {
-            background-color: var(--dark-pink);
-            transform: translateY(-2px);
+            /* A new, deeper rose color for hover to make it "light up" */
+            background-color: #C25E7C; 
+            transform: translateY(-3px); /* Moves up slightly more */
+            box-shadow: 0 6px 10px rgba(194, 94, 124, 0.4); /* Shadow grows */
         }
 
         /* General Section Styling */
