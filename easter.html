@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marleen's</title>
+    <title>Marleen's Cake Pops</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
     <style>
         /* --- CSS STYLES START HERE --- */
         
-        /* Variables for easy color changes */
+        /* Easter Palette */
         :root {
-            --primary-pink: #F8C3CD; /* Soft Pink */
-            --dark-pink: #D8829D;    /* Darker Pink accents */
-            --chocolate: #5D4037;    /* Dark Brown text */
+            --primary-color: #E6DAFA; /* Soft Pastel Purple */
+            --dark-color: #9C77D9;    /* Deeper Easter Purple */
+            --chocolate: #5D4037;     /* Dark Brown text */
             --white: #ffffff;
-            --bg-light: #FFFBFB;     /* Very pale pinkish white background */
+            --bg-light: #FFFFF8;      /* Very soft pastel yellow background */
         }
 
-        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
@@ -32,7 +31,6 @@
             line-height: 1.6;
         }
 
-        /* Typography */
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
         }
@@ -64,7 +62,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--dark-pink);
+            color: var(--dark-color);
         }
 
         .nav-links {
@@ -74,27 +72,14 @@
         }
 
         .nav-links li a:hover {
-            color: var(--dark-pink);
-        }
-
-        .btn-nav {
-            background-color: var(--dark-pink);
-            color: var(--white);
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-
-        .btn-nav:hover {
-            background-color: var(--chocolate);
-            color: var(--white);
+            color: var(--dark-color);
         }
 
         /* Hero / Header Section */
         .hero {
             height: 80vh;
-            /* Using one of your photos as a background with a white overlay so text is readable */
-            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.6)), url('IMG_4388.jpg');
+            /* Using the new Easter Egg image as the background! */
+            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.7)), url('easter_egg.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -104,39 +89,30 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 10px;
-            color: var(--dark-pink);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-            font-weight: 500;
+            color: var(--dark-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
         /* Main Button Styling */
         .btn-main {
             display: inline-block;
             padding: 12px 30px;
-            /* Changed start color to pink */
-            background-color: var(--dark-pink); 
+            background-color: var(--dark-color); 
             color: var(--white);
             border-radius: 30px;
             font-weight: 600;
-            transition: 0.3s ease-in-out; /* Smoother transition */
-            box-shadow: 0 4px 6px rgba(216, 130, 157, 0.3); /* Subtle pink shadow */
+            transition: 0.3s ease-in-out; 
+            box-shadow: 0 4px 6px rgba(156, 119, 217, 0.3); 
         }
 
         .btn-main:hover {
-            /* A new, deeper rose color for hover to make it "light up" */
-            background-color: #C25E7C; 
-            transform: translateY(-3px); /* Moves up slightly more */
-            box-shadow: 0 6px 10px rgba(194, 94, 124, 0.4); /* Shadow grows */
+            background-color: #8A5DC2; 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 10px rgba(138, 93, 194, 0.4); 
         }
 
-        /* General Section Styling */
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -147,12 +123,12 @@
         h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: var(--dark-pink);
+            color: var(--dark-color);
         }
 
         /* Menu Section */
-        .bg-pink {
-            background-color: #FFF0F3;
+        .bg-theme {
+            background-color: #F8F4FF; /* Faint purple */
         }
 
         .menu-grid {
@@ -160,6 +136,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
+            justify-content: center;
         }
 
         .card {
@@ -169,6 +146,8 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             text-align: left;
             transition: transform 0.3s;
+            max-width: 400px;
+            margin: 0 auto;
         }
 
         .card:hover {
@@ -177,7 +156,7 @@
 
         .card-image img {
             width: 100%;
-            height: 250px;
+            height: 350px; /* Gives the tall bunny/egg boxes room to breathe */
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 15px;
@@ -189,13 +168,7 @@
             color: var(--chocolate);
         }
 
-        /* .details {
-            margin-top: 15px;
-            list-style-position: inside;
-            font-size: 0.9rem;
-            color: #666;
-        } */
-        card p, 
+        .card p, 
         .card ul.details li {
             font-size: 0.95rem;       
             color: #666;              
@@ -209,53 +182,20 @@
             margin-top: 10px;
         }
 
-        /* Gallery Grid */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .gallery-grid img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .gallery-grid img:hover {
-            transform: scale(1.02);
-            cursor: pointer;
-        }
-
         /* Contact Section */
-        /* Contact Section - White Theme */
-#contact {
-    background-color: var(--white); /* Now matches the header */
-    color: var(--chocolate);        /* Dark text for readability */
-    padding: 80px 20px;
-    text-align: center;
-    border-top: 4px solid #FFF0F3;  /* A subtle pink line to separate it from the gallery */
-}
+        #contact {
+            background-color: var(--white); 
+            color: var(--chocolate);        
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 4px solid #F8F4FF;  
+        }
 
-#contact h2 {
-    color: var(--dark-pink);        /* Pink headline to match the rest of the site */
-    margin-bottom: 15px;
-}
+        #contact h2 {
+            color: var(--dark-color);        
+            margin-bottom: 15px;
+        }
 
-#contact p {
-    max-width: 600px;
-    margin: 0 auto 20px auto;       /* Centers the text nicely */
-    color: #666;                    /* Soft gray for the description */
-}
-
-.contact-methods {
-    margin: 30px auto;
-    font-size: 1.1rem;
-    line-height: 2;
-    color: var(--chocolate);        /* Darker text for the steps so they stand out */
-}
-        /* Footer */
         footer {
             background-color: #3E2b24;
             color: #aaa;
@@ -264,15 +204,12 @@
             font-size: 0.8rem;
         }
 
-
-        /* Mobile Adjustments */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Hidden on mobile for simplicity */
+            .nav-links { display: none; } 
             .logo { margin: 0 auto; }
             .hero { height: 60vh; }
         }
-        /* --- CSS ENDS HERE --- */
     </style>
 </head>
 <body>
@@ -283,20 +220,19 @@
         </div>
     </header>
 
-
-    <section id="menu" class="bg-pink">
+    <section id="menu" class="bg-theme">
         <div class="container">
-            <h2>Selection</h2>
+            <h2>The Easter Collection</h2>
             <div class="menu-grid">
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="5_op_1.png" alt="5 dollar option">
+                        <img src="easter_egg.jpg" alt="Easter Egg Tray">
                     </div>
-                    <h3>$5 Option A</h3>
-                    <p>Cake Pop Flavors:</p>
-                    <ul class = "details">
-                        <li>Valentine Funfetti</li>
+                    <h3>The Easter Egg Tray</h3>
+                    <p>Spring Flavors Include:</p>
+                    <ul class="details">
+                        <li>Spring Funfetti</li>
                         <li>Chocolate</li>
                         <li>Red Velvet</li>
                         <li>Strawberry</li>
@@ -305,79 +241,32 @@
 
                 <div class="card">
                     <div class="card-image">
-                        <img src="5_op_2.png" alt="5 dollar option">
+                        <img src="easter_bunny.jpg" alt="Yellow Bunny Box">
                     </div>
-                    <h3>$5 Option B</h3>
-                    <p>Cake Pop Flavors:</p>
-                    <ul class = "details">
-                        <li>Valentine Funfetti</li>
+                    <h3>The Bunny Box</h3>
+                    <p>Spring Flavors Include:</p>
+                    <ul class="details">
+                        <li>Spring Funfetti</li>
                         <li>Chocolate</li>
                         <li>Red Velvet</li>
                         <li>Strawberry</li>
                     </ul>
                 </div>
-
-                <div class="card">
-                    <div class="card-image">
-                        <img src="10_op_1.png" alt="10 dollar option">
-                    </div>
-                    <h3>$10 Option A</h3>                    
-                    <p>Cake Pop Flavors:</p>
-                    <ul class = "details">
-                        <li>Valentine Funfetti</li>
-                        <li>Chocolate</li>
-                        <li>Red Velvet</li>
-                        <li>Strawberry</li>
-                    </ul>
-
-        
-                </div>
-
-                <div class="card">
-                    <div class="card-image">
-                        <img src="10_op_2.png" alt="10 dollar option">
-                    </div>
-                    <h3>$10 Option B</h3>
-                    <p>Cake Pop Flavors:</p>
-                    <ul class = "details">
-                        <li>Valentine Funfetti</li>
-                        <li>Chocolate</li>
-                        <li>Red Velvet</li>
-                        <li>Strawberry</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <div class="card-image">
-                        <img src="20_op.png" alt="20 dollar option">
-                    </div>
-                    <h3>$20 Option</h3>
-                    <p>Cake Pop Flavors:</p>
-                    <ul class = "details">
-                        <li>Valentine Funfetti</li>
-                        <li>Chocolate</li>
-                        <li>Red Velvet</li>
-                        <li>Strawberry</li>
-                    </ul>
-                </div>
-
-                <!-- <div class="card">
-                    <div class="card-image">
-                        <img src="50_op.png" alt="50 dollar option">
-                    </div>
-                    <h3>$50 Option</h3>
-                </div> -->
 
             </div>
         </div>
     </section>
+
     <section id="contact">
         <div class="contact-box">
-            <a href="https://www.instagram.com/popsbymars?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" class="btn-main">Instagram: @popsbymars</a>
+            <h2 style="margin-bottom: 30px;">Ready to order for Easter?</h2>
+            <a href="https://www.instagram.com/popsbymars?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" class="btn-main" target="_blank">Message us on Instagram: @popsbymars</a>
         </div>
     </section>
     
-
+    <footer>
+        <p>&copy; 2024 Marleen's Cake Pops. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
